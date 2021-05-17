@@ -1,0 +1,59 @@
+<div class="row bk-nav">
+    <div class="col-4">
+        <div class="login-form">
+            <form>
+                <h2 class="text-center titleOR">Log in</h2>   
+
+                <div class="form-group my-3">
+                    <input type="text" class="form-control" placeholder="Username" required="required"
+                    #user>
+                </div>
+                <div class="form-group my-3">
+                    <input type="password" class="form-control" placeholder="zipcode" required="required"
+                    #passwd>
+                </div>
+
+                <div class="form-group mb-3 d-grid gap-2">
+                    <button type="button" class="btn btn-danger"
+                    (click)="search(user.value, passwd.value)">Log in</button>
+                </div>
+                <div class="clearfix">
+                    <label class="pull-left checkbox-inline d-block text-center"><input type="checkbox"> Remember me</label>
+                </div>        
+            </form>
+
+            <p class="text-center"><a href="#">Create an Account</a></p>
+        </div>
+    </div>
+    <div class="col-7 my-5">
+        <div class="contenedor-sm">
+            <h4>Directivas de la SPA...</h4>
+            <hr style="background-color: white;">
+
+            <ul>
+                <li>
+                    <p>Para acceder a la página home con un usuario es necesario usar el username y como contraseña el "zipcode" ya que no se me ocurrio otra cosa a usar ni puedes crear una.</p>
+                    <p>Ejemplo: Bret  >>  92998-3874</p>
+                </li>
+                <li>
+                    <p>Si accedes a home sin logearte te mostrara una página vacia.</p>
+                </li>
+                <li>
+                    <p>Para ingresar a los perfiles de los 10 usuarios disponibles por la API solo es necesario dar click sobre el nombre del usuario en el post.</p>
+                </li>
+                <li>
+                    <p>Para visualizar comentarios solo se requiere presionar el boton y podar ver el comentario de ese post en especifico y para cerrarlo es igual al boton, se pueden abrir todos los comentarios que se deseen.</p>
+                </li>
+                <li>
+                    <p>Si no saliste con "logout" al volver a comenzar iniciara directamente en home en su cuenta.</p>
+                </li>
+                <li>
+                    <p>No funciona "Remember Me" ni "Create an Account".</p>
+                </li>
+                <hr>
+
+                <p style="color: orangered; font-weight: bolder;"><i class="fas fa-code-branch mx-2"></i>Gracias por la oportunidad.</p>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.nav-opt > li > a {
+    color: white;
+}
+
+#logoS {
+    font-weight: bolder;
+    color: orangered;
+    font-size: 1.7rem;
+}

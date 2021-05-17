@@ -1,0 +1,63 @@
+<div class="container">
+    <section class="jumbotron my-3">
+        <div class="row">
+            <div class="col-4 my-5 mx-5">
+                <div class="text-center container">
+                    <h3><i class="fas fa-user-astronaut mr-2"></i> {{usr.name}}</h3>
+                </div>
+                <hr class="mb-3">
+
+                <img src="../../../assets/img/perfil_icon.png" alt="perfil"
+                    style="width: 17rem; display: block; margin: auto;">
+            </div>
+
+            <div class="col-6 mx-5 my-5">
+                <h4><span>Datos de "{{usr.username}}": </span></h4>
+                <hr>
+
+                <p><span>Email:</span> {{usr.email}}</p>
+                <p><span>Número:</span> {{usr.phone}}</p>
+                <p><span>Sitio web:</span> {{usr.website}}</p>
+                <p><span>Trabaja en...</span></p>
+                <p class="mx-2">{{usr.company.name}}</p>
+                <p class="mx-2">{{usr.company.catchPhrase}}</p>
+                <p class="mx-2">{{usr.company.bs}}</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="my-3 text-center">
+        <h3 class="py-3">Posts hechos por este usuario:</h3>
+
+        <table class="table table-striped my-4">
+            <tbody>
+                <tr *ngFor="let post of usrPosts">
+                    <th scope="row">{{post.id}}</th>
+                    <td>{{post.title}}</td>
+                    <td>
+                        <button class="btn btn-outline-danger" (click)="triggerPost(modalData, post.id)">Ver post</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ## MODAL ### -->
+<ng-template #modalData let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Post escrito por {{usr.name}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <p>{{viewPost}}</p>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+    </div>
+</ng-template>
+<div class="modal fade" #postModal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

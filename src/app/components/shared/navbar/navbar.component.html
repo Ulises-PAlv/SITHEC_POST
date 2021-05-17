@@ -1,0 +1,33 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" id="logoS"><i class="fas fa-terminal mx-1"></i> SITHEC_POST</a>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <div *ngIf="router.url === '/login'">
+          <ul class="navbar-nav nav-opt">
+            <li class="nav-item">
+              <a class="nav-link active disabled" aria-current="page" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+
+        <div *ngIf="router.url !== '/login'">
+          <ul class="navbar-nav nav-opt">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" [routerLink]="['home']">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link dissabled">Bienvenid@ {{usrname}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="logOut()">Logout <i class="fas fa-walking mx-2"></i></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</div>
